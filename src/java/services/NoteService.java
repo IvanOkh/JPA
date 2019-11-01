@@ -5,7 +5,11 @@
  */
 package services;
 
+import dataaccess.NoteDB;
+import dataaccess.NotesDBException;
+import java.util.Date;
 import java.util.List;
+import models.Note;
 
 /**
  *
@@ -37,7 +41,7 @@ public class NoteService
         
         if(r == 0)
         {
-            throw new NotesBDException("Error - Update operation unsuccessful.");
+            throw new NotesDBException("Error: Can't update ;(");
         }
         
         return r;
@@ -51,7 +55,7 @@ public class NoteService
         
         if(r == 0)
         {
-            throw new NotesBDException("Error - Delete operation unsuccessful.");
+            throw new NotesDBException("Error: Can't delete ;(");
         }
         
         return r;
@@ -66,7 +70,7 @@ public class NoteService
         
         if(r == 0)
         {
-            throw new NotesBDException("Error - Insert operation unsuccessful.");
+            throw new NotesDBException("Error: Can't insert ;(");
         }
         
         return r;
